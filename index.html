@@ -116,18 +116,7 @@
       text-align: center;
       padding: 20px 0;
       margin-top: auto;
-    }
-
-    /* ---------- Responsive ---------- */
-    @media (max-width: 1200px) {
-      .product-grid { grid-template-columns: repeat(3, minmax(220px, 1fr)); }
-    }
-    @media (max-width: 900px) {
-      .product-grid { grid-template-columns: repeat(2, minmax(220px, 1fr)); }
-    }
-    @media (max-width: 600px) {
-      .product-grid { grid-template-columns: 1fr; }
-    }
+    
     /* --- Global mobile safety: prevent sideways scroll --- */
     html, body { overflow-x: hidden; }
 
@@ -177,45 +166,22 @@
 
     <section class="product-grid">
       <article class="product-card">
-        <img class="product-img" src="https://placehold.co/480x320?text=PC+1" alt="PC 1" />
         <h2 class="product-title">PC Build 1</h2>
         <p class="product-price">$899.00</p>
         <button class="btn btn-disabled" disabled>Out of Stock</button>
       </article>
 
       <article class="product-card">
-        <img class="product-img" src="https://placehold.co/480x320?text=PC+2" alt="PC 2" />
         <h2 class="product-title">PC Build 2</h2>
         <p class="product-price">$1,199.00</p>
         <button class="btn btn-disabled" disabled>Out of Stock</button>
       </article>
 
       <article class="product-card">
-        <img class="product-img" src="https://placehold.co/480x320?text=PC+3" alt="PC 3" />
         <h2 class="product-title">PC Build 3</h2>
         <p class="product-price">$1,549.00</p>
         <button class="btn">Add to Cart</button>
       </article>
-
-      <article class="product-card">
-        <img class="product-img" src="https://placehold.co/480x320?text=PC+4" alt="PC 4" />
-        <h2 class="product-title">PC Build 4</h2>
-        <p class="product-price">$1,649.00</p>
-        <button class="btn">Add to Cart</button>
-      </article>
-
-      <article class="product-card">
-        <img class="product-img" src="https://placehold.co/480x320?text=PC+5" alt="PC 5" />
-        <h2 class="product-title">PC Build 5</h2>
-        <p class="product-price">$2,299.00</p>
-        <button class="btn">Add to Cart</button>
-      </article>
-
-      <article class="product-card">
-        <img class="product-img" src="https://placehold.co/480x320?text=PC+6" alt="PC 6" />
-        <h2 class="product-title">PC Build 6</h2>
-        <p class="product-price">$2,699.00</p>
-        <button class="btn">Add to Cart</button>
       </article>
     </section>
   </main>
