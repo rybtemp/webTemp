@@ -6,19 +6,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Pre-Built PCs (Sample)</title>
   <style>
-    /* === Base & Accessibility === */
+    
     :root { --bg:#ffffff; --text:#1f2328; --brand:#111; --muted:#f3f4f6; --accent:#2563eb; }
     * { box-sizing: border-box; }
     html, body { height: 100%; }
     body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color: var(--text); background: var(--bg); display:flex; flex-direction:column; }
     a { color: var(--accent); }
-    /* keyboard focus visible */
+
     :focus-visible { outline: 3px solid #94c1ff; outline-offset: 2px; border-radius: 6px; }
     /* skip link */
     .skip-link { position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden; }
     .skip-link:focus { left:12px; top:12px; width:auto; height:auto; padding:8px 10px; background:#fff; border:2px solid #111; z-index:1000; }
 
-    /* === Header === */
+   
     header { background: var(--brand); color:#fff; }
     .nav { max-width: 960px; margin: 0 auto; display:flex; align-items:center; justify-content:space-between; padding: 14px 16px; }
     .brand { display:flex; align-items:center; gap:10px; }
@@ -27,11 +27,11 @@
     .menu { list-style:none; display:flex; gap:18px; margin:0; padding:0; }
     .menu a { color:#fff; text-decoration:none; font-weight:600; }
 
-    /* === Layout === */
+   
     main { max-width: 960px; margin: 0 auto; padding: 24px 16px; flex:1; }
     h1 { text-align:center; margin: 10px 0 20px; }
 
-    /* === Cards (3 items only, simple) === */
+ 
     .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; }
     .card { background: var(--muted); border:1px solid #e5e7eb; border-radius:12px; padding:12px; display:flex; flex-direction:column; align-items:center; text-align:center; }
     .card img { width:100%; aspect-ratio: 4 / 3; object-fit:cover; border-radius:8px; background:#e5e5e5; border:1px solid #ddd; }
@@ -40,16 +40,17 @@
     .btn { border:0; background:#111; color:#fff; padding:10px 14px; border-radius:8px; cursor:pointer; font-weight:700; }
     .btn[disabled] { background:#6b7280; cursor:not-allowed; }
 
-    /* === Footer === */
+  
     footer { background:#111; color:#fff; text-align:center; padding:14px 0; margin-top:auto; }
 
-    /* === Mobile polish === */
+  
     @media (max-width: 640px) {
       .menu { flex-wrap:wrap; gap:12px; }
       h1 { font-size:1.6rem; }
     }
   </style>
 </head>
+
 <body>
   <a class="skip-link" href="#content">Skip to main content</a>
   <header>
@@ -70,23 +71,19 @@
     <h1>Pre‑Built Gaming PCs</h1>
 
     <section class="grid" aria-label="Products">
-      <!-- Only 3 simple items to match a basic wireframe -->
       <article class="card">
-        <img src="https://placehold.co/640x480?text=PC+1" alt="Black mid‑tower gaming PC with blue fans" />
         <h2>PC Build 1</h2>
         <p class="price">$899.00</p>
         <button class="btn" disabled aria-disabled="true">Out of Stock</button>
       </article>
 
       <article class="card">
-        <img src="https://placehold.co/640x480?text=PC+2" alt="White case gaming PC with RGB lighting" />
         <h2>PC Build 2</h2>
         <p class="price">$1,199.00</p>
         <button class="btn" disabled aria-disabled="true">Out of Stock</button>
       </article>
 
       <article class="card">
-        <img src="https://placehold.co/640x480?text=PC+3" alt="Black mesh‑front PC with red lighting" />
         <h2>PC Build 3</h2>
         <p class="price">$1,549.00</p>
         <button class="btn">Add to Cart</button>
