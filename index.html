@@ -20,23 +20,44 @@
     .navbar {
       background: #000;
       color: #fff;
-      padding: 24px 32px; /* bigger header */
+      padding: 20px 32px;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
-    .logo { font-weight: 700; font-size: 1.3rem; }
+    .navbar-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo-img {
+      width: 40px;
+      height: 40px;
+      border-radius: 4px;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      color: #000;
+    }
+    .site-title {
+      font-size: 1.4rem;
+      font-weight: 800;
+    }
     .navbar ul { list-style: none; display: flex; gap: 24px; margin: 0; padding: 0; }
     .navbar a { color: #fff; text-decoration: none; font-weight: 700; font-size: 1.05rem; }
 
     /* ---------- Layout ---------- */
-    .container { max-width: 1320px; margin: 0 auto; padding: 32px 24px 24px; flex: 1; }
-    .page-title { text-align: center; margin: 28px 0 20px; font-size: 2rem; font-weight: 800; }
+    .container { flex: 1; display: flex; flex-direction: column; align-items: center; padding: 32px 24px 24px; }
+    .page-title { text-align: center; margin: 20px 0 28px; font-size: 2rem; font-weight: 800; }
 
     .product-grid {
       display: grid;
-      grid-template-columns: repeat(4, minmax(240px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 28px;
+      max-width: 1000px; /* keeps grid centered */
+      justify-content: center;
     }
 
     /* ---------- Card ---------- */
@@ -94,7 +115,7 @@
       color: #fff;
       text-align: center;
       padding: 20px 0;
-      margin-top: auto; /* keeps footer at bottom */
+      margin-top: auto;
     }
 
     /* ---------- Responsive ---------- */
@@ -111,7 +132,10 @@
 </head>
 <body>
   <header class="navbar">
-    <div class="logo">MyBrand</div>
+    <div class="navbar-left">
+      <div class="logo-img">M</div>
+      <div class="site-title">MyBrand</div>
+    </div>
     <nav>
       <ul>
         <li><a href="#">Shop</a></li>
@@ -125,56 +149,48 @@
   <main class="container">
     <h1 class="page-title">Pre-Built Gaming PCs</h1>
 
-    <section class="catalog">
-      <section class="product-grid">
-        <!-- Card 1 -->
-        <article class="product-card">
-          <img class="product-img" src="https://placehold.co/480x320?text=PC+1" alt="PC 1" />
-          <h2 class="product-title">PC Build 1</h2>
-          <p class="product-price">$899.00</p>
-          <button class="btn btn-disabled" disabled>Out of Stock</button>
-        </article>
+    <section class="product-grid">
+      <article class="product-card">
+        <img class="product-img" src="https://placehold.co/480x320?text=PC+1" alt="PC 1" />
+        <h2 class="product-title">PC Build 1</h2>
+        <p class="product-price">$899.00</p>
+        <button class="btn btn-disabled" disabled>Out of Stock</button>
+      </article>
 
-        <!-- Card 2 -->
-        <article class="product-card">
-          <img class="product-img" src="https://placehold.co/480x320?text=PC+2" alt="PC 2" />
-          <h2 class="product-title">PC Build 2</h2>
-          <p class="product-price">$1,199.00</p>
-          <button class="btn btn-disabled" disabled>Out of Stock</button>
-        </article>
+      <article class="product-card">
+        <img class="product-img" src="https://placehold.co/480x320?text=PC+2" alt="PC 2" />
+        <h2 class="product-title">PC Build 2</h2>
+        <p class="product-price">$1,199.00</p>
+        <button class="btn btn-disabled" disabled>Out of Stock</button>
+      </article>
 
-        <!-- Card 3 -->
-        <article class="product-card">
-          <img class="product-img" src="https://placehold.co/480x320?text=PC+3" alt="PC 3" />
-          <h2 class="product-title">PC Build 3</h2>
-          <p class="product-price">$1,549.00</p>
-          <button class="btn">Add to Cart</button>
-        </article>
+      <article class="product-card">
+        <img class="product-img" src="https://placehold.co/480x320?text=PC+3" alt="PC 3" />
+        <h2 class="product-title">PC Build 3</h2>
+        <p class="product-price">$1,549.00</p>
+        <button class="btn">Add to Cart</button>
+      </article>
 
-        <!-- Card 4 -->
-        <article class="product-card">
-          <img class="product-img" src="https://placehold.co/480x320?text=PC+4" alt="PC 4" />
-          <h2 class="product-title">PC Build 4</h2>
-          <p class="product-price">$1,649.00</p>
-          <button class="btn">Add to Cart</button>
-        </article>
+      <article class="product-card">
+        <img class="product-img" src="https://placehold.co/480x320?text=PC+4" alt="PC 4" />
+        <h2 class="product-title">PC Build 4</h2>
+        <p class="product-price">$1,649.00</p>
+        <button class="btn">Add to Cart</button>
+      </article>
 
-        <!-- Card 5 -->
-        <article class="product-card">
-          <img class="product-img" src="https://placehold.co/480x320?text=PC+5" alt="PC 5" />
-          <h2 class="product-title">PC Build 5</h2>
-          <p class="product-price">$2,299.00</p>
-          <button class="btn">Add to Cart</button>
-        </article>
+      <article class="product-card">
+        <img class="product-img" src="https://placehold.co/480x320?text=PC+5" alt="PC 5" />
+        <h2 class="product-title">PC Build 5</h2>
+        <p class="product-price">$2,299.00</p>
+        <button class="btn">Add to Cart</button>
+      </article>
 
-        <!-- Card 6 -->
-        <article class="product-card">
-          <img class="product-img" src="https://placehold.co/480x320?text=PC+6" alt="PC 6" />
-          <h2 class="product-title">PC Build 6</h2>
-          <p class="product-price">$2,699.00</p>
-          <button class="btn">Add to Cart</button>
-        </article>
-      </section>
+      <article class="product-card">
+        <img class="product-img" src="https://placehold.co/480x320?text=PC+6" alt="PC 6" />
+        <h2 class="product-title">PC Build 6</h2>
+        <p class="product-price">$2,699.00</p>
+        <button class="btn">Add to Cart</button>
+      </article>
     </section>
   </main>
 
@@ -183,4 +199,3 @@
   </footer>
 </body>
 </html>
-
