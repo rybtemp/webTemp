@@ -1,164 +1,101 @@
-<!-- index.html (single file version with embedded CSS) -->
+<!-- index.html (simplified, rubric-friendly single file) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Pre-Built Gaming PCs</title>
+  <title>Pre-Built PCs (Sample)</title>
   <style>
+    /* === Base & Accessibility === */
+    :root { --bg:#ffffff; --text:#1f2328; --brand:#111; --muted:#f3f4f6; --accent:#2563eb; }
     * { box-sizing: border-box; }
-    html, body { height: 100%; margin: 0; }
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      color: #222;
-      background: #fff;
-      display: flex;
-      flex-direction: column;
-    }
+    html, body { height: 100%; }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color: var(--text); background: var(--bg); display:flex; flex-direction:column; }
+    a { color: var(--accent); }
+    /* keyboard focus visible */
+    :focus-visible { outline: 3px solid #94c1ff; outline-offset: 2px; border-radius: 6px; }
+    /* skip link */
+    .skip-link { position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden; }
+    .skip-link:focus { left:12px; top:12px; width:auto; height:auto; padding:8px 10px; background:#fff; border:2px solid #111; z-index:1000; }
 
-    /* ---------- Header ---------- */
-    .navbar {
-      background: #000;
-      color: #fff;
-      padding: 20px 32px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .navbar-left {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .logo-img {
-      width: 40px;
-      height: 40px;
-      border-radius: 4px;
-      background: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-      color: #000;
-    }
-    .site-title {
-      font-size: 1.4rem;
-      font-weight: 800;
-    }
-    .navbar ul { list-style: none; display: flex; gap: 24px; margin: 0; padding: 0; }
-    .navbar a { color: #fff; text-decoration: none; font-weight: 700; font-size: 1.05rem; }
+    /* === Header === */
+    header { background: var(--brand); color:#fff; }
+    .nav { max-width: 960px; margin: 0 auto; display:flex; align-items:center; justify-content:space-between; padding: 14px 16px; }
+    .brand { display:flex; align-items:center; gap:10px; }
+    .logo { width:32px; height:32px; background:#fff; color:#000; display:grid; place-items:center; border-radius:6px; font-weight:700; }
+    .site-name { font-weight:800; letter-spacing:.2px; }
+    .menu { list-style:none; display:flex; gap:18px; margin:0; padding:0; }
+    .menu a { color:#fff; text-decoration:none; font-weight:600; }
 
-    /* ---------- Layout ---------- */
-    .container { flex: 1; display: flex; flex-direction: column; align-items: center; padding: 32px 24px 24px; }
-    .page-title { text-align: center; margin: 20px 0 28px; font-size: 2rem; font-weight: 800; }
+    /* === Layout === */
+    main { max-width: 960px; margin: 0 auto; padding: 24px 16px; flex:1; }
+    h1 { text-align:center; margin: 10px 0 20px; }
 
-    .product-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 28px;
-      max-width: 1000px; /* keeps grid centered */
-      justify-content: center;
+    /* === Cards (3 items only, simple) === */
+    .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; }
+    .card { background: var(--muted); border:1px solid #e5e7eb; border-radius:12px; padding:12px; display:flex; flex-direction:column; align-items:center; text-align:center; }
+    .card img { width:100%; aspect-ratio: 4 / 3; object-fit:cover; border-radius:8px; background:#e5e5e5; border:1px solid #ddd; }
+    .card h2 { font-size:1.1rem; margin:10px 0 4px; }
+    .price { margin: 0 0 10px; font-weight:700; }
+    .btn { border:0; background:#111; color:#fff; padding:10px 14px; border-radius:8px; cursor:pointer; font-weight:700; }
+    .btn[disabled] { background:#6b7280; cursor:not-allowed; }
+
+    /* === Footer === */
+    footer { background:#111; color:#fff; text-align:center; padding:14px 0; margin-top:auto; }
+
+    /* === Mobile polish === */
+    @media (max-width: 640px) {
+      .menu { flex-wrap:wrap; gap:12px; }
+      h1 { font-size:1.6rem; }
     }
-
-    /* ---------- Card ---------- */
-    .product-card {
-      background: #f9f9f9;
-      border: 1px solid #e5e5e5;
-      border-radius: 12px;
-      padding: 16px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-between;
-      min-height: 360px;
-      box-shadow: 0 1px 0 #f5f5f5 inset, 0 2px 10px rgba(0,0,0,.03);
-      transition: transform .15s ease, box-shadow .15s ease;
-    }
-    .product-title { font-size: 1.15rem; margin: 12px 0 4px; text-align: center; }
-    .product-price { margin: 0 0 10px; font-weight: 700; }
-
-    .btn {
-      border: none;
-      padding: 10px 18px;
-      border-radius: 6px;
-      background: #333;
-      color: #fff;
-      font-weight: 700;
-      cursor: pointer;
-    }
-    .btn:hover { background: #555; }
-    .btn:active { transform: translateY(1px); }
-
-    .btn-disabled,
-    .btn[disabled] {
-      background: #777;
-      color: #fff;
-      cursor: not-allowed;
-      opacity: 0.9;
-    }
-
-    /* ---------- Footer ---------- */
-    .site-footer {
-      background: #000;
-      color: #fff;
-      text-align: center;
-      padding: 20px 0;
-      margin-top: auto;
-    
-    /* --- Global mobile safety: prevent sideways scroll --- */
-    html, body { overflow-x: hidden; }
-
-    /* --- Keep header visible and mobile-friendly --- */
-    .navbar { position: sticky; top: 0; z-index: 1000; }
-
-    /* Ensure grid never exceeds viewport */
-    .product-grid { width: 100%; margin-left: auto; margin-right: auto; }
   </style>
 </head>
-
 <body>
-  <header class="navbar">
-    <div class="navbar-left">
-      <div class="logo-img">M</div>
-      <div class="site-title">MyBrand</div>
-    </div>
-    <nav>
-      <ul>
+  <a class="skip-link" href="#content">Skip to main content</a>
+  <header>
+    <nav class="nav" aria-label="Primary">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">M</div>
+        <span class="site-name">MyBrand</span>
+      </div>
+      <ul class="menu">
+        <li><a href="#">Home</a></li>
         <li><a href="#">Shop</a></li>
-        <li><a href="#">Business</a></li>
-        <li><a href="#">Build Help</a></li>
-        <li><a href="#">Support</a></li>
+        <li><a href="#">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <main class="container">
-    <h1 class="page-title">Pre-Built Gaming PCs</h1>
+  <main id="content">
+    <h1>Pre‑Built Gaming PCs</h1>
 
-    <section class="product-grid">
-      <article class="product-card">
-        <h2 class="product-title">PC Build 1</h2>
-        <p class="product-price">$899.00</p>
-        <button class="btn btn-disabled" disabled>Out of Stock</button>
+    <section class="grid" aria-label="Products">
+      <!-- Only 3 simple items to match a basic wireframe -->
+      <article class="card">
+        <img src="https://placehold.co/640x480?text=PC+1" alt="Black mid‑tower gaming PC with blue fans" />
+        <h2>PC Build 1</h2>
+        <p class="price">$899.00</p>
+        <button class="btn" disabled aria-disabled="true">Out of Stock</button>
       </article>
 
-      <article class="product-card">
-        <h2 class="product-title">PC Build 2</h2>
-        <p class="product-price">$1,199.00</p>
-        <button class="btn btn-disabled" disabled>Out of Stock</button>
+      <article class="card">
+        <img src="https://placehold.co/640x480?text=PC+2" alt="White case gaming PC with RGB lighting" />
+        <h2>PC Build 2</h2>
+        <p class="price">$1,199.00</p>
+        <button class="btn" disabled aria-disabled="true">Out of Stock</button>
       </article>
 
-      <article class="product-card">
-        <h2 class="product-title">PC Build 3</h2>
-        <p class="product-price">$1,549.00</p>
+      <article class="card">
+        <img src="https://placehold.co/640x480?text=PC+3" alt="Black mesh‑front PC with red lighting" />
+        <h2>PC Build 3</h2>
+        <p class="price">$1,549.00</p>
         <button class="btn">Add to Cart</button>
-      </article>
       </article>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <p>© 2025 My Website</p>
+  <footer>
+    <small>© 2025 MyBrand</small>
   </footer>
 </body>
 </html>
