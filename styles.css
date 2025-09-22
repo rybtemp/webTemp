@@ -14,6 +14,10 @@ body {
   padding: 16px;
 }
 
+.navbar-left {
+  /* basic stacking; no flex */
+}
+
 .logo-img {
   display: inline-block;
   width: 40px;
@@ -34,6 +38,7 @@ body {
   vertical-align: top;
 }
 
+/* Nav as inline list items (classic beginner pattern) */
 .nav-list {
   list-style: none;
   margin: 12px 0 0 0;
@@ -51,6 +56,7 @@ body {
   font-weight: bold;
 }
 
+/* Page layout */
 .container {
   max-width: 960px;
   margin: 0 auto;
@@ -60,6 +66,11 @@ body {
 .page-title {
   text-align: center;
   margin: 16px 0;
+}
+
+/* Products as simple stacked cards */
+.product-list {
+  /* no grid/flex; just block flow */
 }
 
 .product-card {
@@ -72,7 +83,7 @@ body {
 
 .product-img {
   width: 100%;
-  height: auto;
+  height: auto; /* keep proportions */
   border-radius: 4px;
   border: 1px solid #ddd;
 }
@@ -87,6 +98,7 @@ body {
   font-weight: bold;
 }
 
+/* Button */
 .btn {
   background: #333;
   color: #fff;
@@ -99,6 +111,7 @@ body {
   background: #777;
 }
 
+/* Footer */
 .site-footer {
   background: #000;
   color: #fff;
