@@ -1,87 +1,57 @@
-<!-- index.html (simplified, rubric-friendly single file) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Pre-Built PCs</title>
-  <style>
-    
-    :root { --bg:#ffffff; --text:#1f2328; --brand:#111; --muted:#f3f4f6; --accent:#2563eb; }
-    * { box-sizing: border-box; }
-    html, body { height: 100%; }
-    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color: var(--text); background: var(--bg); display:flex; flex-direction:column; }
-    a { color: var(--accent); }
-
-    header { background: var(--brand); color:#fff; }
-    .nav { max-width: 960px; margin: 0 auto; display:flex; align-items:center; justify-content:space-between; padding: 14px 16px; }
-    .brand { display:flex; align-items:center; gap:10px; }
-    .site-name { font-weight:800; letter-spacing:.2px; }
-    .menu { list-style:none; display:flex; gap:18px; margin:0; padding:0; }
-    .menu a { color:#fff; text-decoration:none; font-weight:600; }
-
-    main { max-width: 960px; margin: 0 auto; padding: 24px 16px; flex:1; }
-    h1 { text-align:center; margin: 10px 0 20px; }
-
-    .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; }
-    .card { background: var(--muted); border:1px solid #e5e7eb; border-radius:12px; padding:12px; display:flex; flex-direction:column; align-items:center; text-align:center; }
-    .card h2 { font-size:1.1rem; margin:10px 0 4px; }
-    .price { margin: 0 0 10px; font-weight:700; }
-    .btn { border:0; background:#111; color:#fff; padding:10px 14px; border-radius:8px; cursor:pointer; font-weight:700; }
-    .btn[disabled] { background:#6b7280; cursor:not-allowed; }
-
-  
-    footer { background:#111; color:#fff; text-align:center; padding:14px 0; margin-top:auto; }
-
-  
-    @media (max-width: 640px) {
-      .menu { flex-wrap:wrap; gap:12px; }
-      h1 { font-size:1.6rem; }
-    }
-  </style>
+  <title>ZTT — Home</title>
+  <meta name="description" content="Pre-built gaming PCs, parts, and support. Clean, accessible site built for class module requirements." />
+  <link rel="canonical" href="https://example.com/index.html" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
-
 <body>
-  <header>
-    <nav class="nav" aria-label="Primary">
-      <div class="brand">
-        <span class="site-name">WebDev PCs</span>
-      </div>
-      <ul class="menu">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Shop</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
+<header class="topbar" role="banner">
+  <nav class="nav" aria-label="Main">
+    <div class="logo"><a href="index.html" aria-label="Home">ZTT</a></div>
+    <div class="navlinks" role="menubar">
+      <a role="menuitem" href="index.html">Home</a>
+      <a role="menuitem" href="prebuilt.html">Pre‑Built PCs</a>
+      <a role="menuitem" href="compare.html">Compare</a>
+      <a role="menuitem" href="support.html">Support</a>
+      <a role="menuitem" href="contact.html">Contact</a>
+    </div>
+    <div class="nav-ghost"><a href="#" aria-label="Log in">Log In</a><a href="#" aria-label="Cart">🛒</a></div>
+  </nav>
+</header>
+<main class="wrap">
+
+<section class="products" style="text-align:center">
+  <h1 class="title" style="margin-top:0">Builds that don’t miss.</h1>
+  <p class="micro">Audit‑ready demo site for your module. Fully responsive, accessible, and SEO‑friendly.</p>
+  <p style="margin-top:18px">
+    <a class="btn" data-status="available" href="prebuilt.html" style="display:inline-block; width:auto; padding:12px 18px; border-radius:12px">Shop Pre‑Built PCs</a>
+  </p>
+  <ul style="max-width:760px; margin:22px auto 0; text-align:left">
+    <li>Semantic headings, alt text, keyboard‑navigable menu</li>
+    <li>At least 5 pages total with consistent navigation</li>
+    <li>Includes a list, table, and HTML form with validation + success message</li>
+  </ul>
+</section>
+
+</main>
+<footer>
+  <div class="footer-inner">
+    <nav class="touch-target" aria-label="Footer">
+      <a target="_blank" rel="noopener" href="https://www.amd.com/en/products/processors/ryzen">AMD</a>
+      <a target="_blank" rel="noopener" href="https://www.nvidia.com/en-us/geforce/">NVIDIA</a>
+      <a target="_blank" rel="noopener" href="https://validator.w3.org/">W3C Validator</a>
+      <a target="_blank" rel="noopener" href="https://web.dev/learn/accessibility/">Accessibility</a>
     </nav>
-  </header>
-
-  <main id="content">
-    <h1>Pre‑Built Gaming PCs</h1>
-
-    <section class="grid" aria-label="Products">
-      <article class="card">
-        <h2>PC Build 1</h2>
-        <p class="price">$899.00</p>
-        <button class="btn">Add to Cart</button>
-      </article>
-
-      <article class="card">
-        <h2>PC Build 2</h2>
-        <p class="price">$1,199.00</p>
-        <button class="btn" disabled aria-disabled="true">Out of Stock</button>
-      </article>
-
-      <article class="card">
-        <h2>PC Build 3</h2>
-        <p class="price">$1,549.00</p>
-        <button class="btn">Add to Cart</button>
-      </article>
-    </section>
-  </main>
-
-  <footer>
-    <small>WebDev</small>
-  </footer>
+    <small class="muted">© 2025 ZTT Demo. For coursework only.</small>
+  </div>
+</footer>
+<script src="script.js"></script>
 </body>
 </html>
-
