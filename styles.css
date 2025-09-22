@@ -1,31 +1,147 @@
-:root { --bg:#ffffff; --text:#1f2328; --brand:#111; --muted:#f3f4f6; --accent:#2563eb; }
-    * { box-sizing: border-box; }
-    html, body { height: 100%; }
-    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color: var(--text); background: var(--bg); display:flex; flex-direction:column; }
-    a { color: var(--accent); }
+* { box-sizing: border-box; }
+    html, body { height: 100%; margin: 0; }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #222;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+    }
 
-    header { background: var(--brand); color:#fff; }
-    .nav { max-width: 960px; margin: 0 auto; display:flex; align-items:center; justify-content:space-between; padding: 14px 16px; }
-    .brand { display:flex; align-items:center; gap:10px; }
-    .site-name { font-weight:800; letter-spacing:.2px; }
-    .menu { list-style:none; display:flex; gap:18px; margin:0; padding:0; }
-    .menu a { color:#fff; text-decoration:none; font-weight:600; }
+    /* ---------- Header ---------- */
+    .navbar {
+      background: #000;
+      color: #fff;
+      padding: 20px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .navbar-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo-img {
+      width: 40px;
+      height: 40px;
+      border-radius: 4px;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      color: #000;
+    }
+    .site-title {
+      font-size: 1.4rem;
+      font-weight: 800;
+    }
+    .navbar ul { list-style: none; display: flex; gap: 24px; margin: 0; padding: 0; }
+    .navbar a { color: #fff; text-decoration: none; font-weight: 700; font-size: 1.05rem; }
 
-    main { max-width: 960px; margin: 0 auto; padding: 24px 16px; flex:1; }
-    h1 { text-align:center; margin: 10px 0 20px; }
+    /* ---------- Layout ---------- */
+    .container { flex: 1; display: flex; flex-direction: column; align-items: center; padding: 32px 24px 24px; }
+    .page-title { text-align: center; margin: 20px 0 28px; font-size: 2rem; font-weight: 800; }
 
-    .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; }
-    .card { background: var(--muted); border:1px solid #e5e7eb; border-radius:12px; padding:12px; display:flex; flex-direction:column; align-items:center; text-align:center; }
-    .card h2 { font-size:1.1rem; margin:10px 0 4px; }
-    .price { margin: 0 0 10px; font-weight:700; }
-    .btn { border:0; background:#111; color:#fff; padding:10px 14px; border-radius:8px; cursor:pointer; font-weight:700; }
-    .btn[disabled] { background:#6b7280; cursor:not-allowed; }
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 28px;
+      max-width: 1000px; /* keeps grid centered */
+      justify-content: center;
+    }
 
-  
-    footer { background:#111; color:#fff; text-align:center; padding:14px 0; margin-top:auto; }
+    /* ---------- Card ---------- */
+    .product-card {
+      background: #f9f9f9;
+      border: 1px solid #e5e5e5;
+      border-radius: 12px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 360px;
+      box-shadow: 0 1px 0 #f5f5f5 inset, 0 2px 10px rgba(0,0,0,.03);
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+    .product-card:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,.08); }
 
-  
-    @media (max-width: 640px) {
-      .menu { flex-wrap:wrap; gap:12px; }
-      h1 { font-size:1.6rem; }
+    .product-img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border-radius: 8px;
+      background: #eee;
+      border: 1px solid #d9d9d9;
+      box-shadow: inset 0 1px 0 #fff;
+    }
+
+    .product-title { font-size: 1.15rem; margin: 12px 0 4px; text-align: center; }
+    .product-price { margin: 0 0 10px; font-weight: 700; }
+
+    .btn {
+      border: none;
+      padding: 10px 18px;
+      border-radius: 6px;
+      background: #333;
+      color: #fff;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .btn:hover { background: #555; }
+    .btn:active { transform: translateY(1px); }
+
+    .btn-disabled,
+    .btn[disabled] {
+      background: #777;
+      color: #fff;
+      cursor: not-allowed;
+      opacity: 0.9;
+    }
+
+    /* ---------- Footer ---------- */
+    .site-footer {
+      background: #000;
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: auto;
+    }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 1200px) {
+      .product-grid { grid-template-columns: repeat(3, minmax(220px, 1fr)); }
+    }
+    @media (max-width: 900px) {
+      .product-grid { grid-template-columns: repeat(2, minmax(220px, 1fr)); }
+    }
+    @media (max-width: 600px) {
+      .product-grid { grid-template-columns: 1fr; }
+    }
+    /* --- Global mobile safety: prevent sideways scroll --- */
+    html, body { overflow-x: hidden; }
+
+    /* --- Keep header visible and mobile-friendly --- */
+    .navbar { position: sticky; top: 0; z-index: 1000; }
+
+    /* Ensure grid never exceeds viewport */
+    .product-grid { width: 100%; margin-left: auto; margin-right: auto; }
+
+    /* --- Mobile tweaks --- */
+    @media (max-width: 700px) {
+      .navbar { padding: 14px 16px; gap: 12px; flex-wrap: wrap; }
+      .navbar-left { gap: 8px; }
+      .logo-img { width: 32px; height: 32px; }
+      .site-title { font-size: 1.1rem; }
+      .navbar ul { gap: 12px; flex-wrap: wrap; }
+      .navbar a { font-size: .98rem; }
+
+      .container { padding: 18px 14px; }
+      .page-title { font-size: 1.75rem; margin: 12px 0 16px; padding: 0 6px; }
+
+      .product-grid { grid-template-columns: 1fr; max-width: 560px; padding: 0 2px; }
+      .product-card { margin: 0 2px; }
+      .product-img { border-radius: 10px; }
     }
