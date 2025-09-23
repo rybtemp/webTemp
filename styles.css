@@ -87,26 +87,3 @@ body {
   padding: 16px 0; margin-top: auto;
 }
 
-/* ---------- Responsive ---------- */
-@media (max-width: 1200px) {
-  .product-grid { grid-template-columns: repeat(3, 1fr); }
-}
-
-@media (max-width: 900px) {
-  .navbar { padding: 12px 14px; }
-  .logo-img { width: 32px; height: 32px; }
-  .site-title { font-size: 1.1rem; }
-  .navbar ul { gap: 12px; flex-wrap: wrap; }
-
-  .container { padding: 18px 12px; }
-  .page-title { font-size: 1.6rem; margin: 12px 0 16px; }
-
-  .product-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
-  .product-card { min-height: 300px; }
-  .product-img { height: 150px; }
-}
-
-@media (max-width: 600px) {
-  .product-grid { grid-template-columns: 1fr; }
-  .product-card { margin: 0 2px; }
-}
