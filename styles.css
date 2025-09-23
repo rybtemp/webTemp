@@ -1,6 +1,5 @@
 /* ===== base ===== */
-* {
-  box-sizing: border-box;
+* {  box-sizing: border-box;
 }
 html, body {
   height: 100%;
@@ -43,11 +42,11 @@ header {
   justify-content: center;
   border-radius: 4px;
   font-weight: 700;
-  font-size: 12px;
+  font-size: 0.9rem;
 }
 .site-name {
   font-weight: 700;
-  font-size: 14px;
+  font-size: 1.2rem;
   letter-spacing: .2px;
 }
 .menu {
@@ -61,7 +60,7 @@ header {
   color: #fff;
   text-decoration: none;
   font-weight: 700;
-  font-size: 12px;
+  font-size: 1rem;
 }
 
 /* ===== main ===== */
@@ -74,13 +73,13 @@ main {
 h1 {
   text-align: center;
   margin: 10px 0 14px;
-  font-size: 28px;
+  font-size: 2rem; 
 }
 
 /* ===== grid & cards ===== */
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 28px;
 }
 .card {
@@ -99,25 +98,25 @@ h1 {
   justify-content: center;
   border-radius: 6px;
   font-weight: 700;
-  font-size: 42px;
+  font-size: 2.6rem;
   letter-spacing: 1px;
   margin-bottom: 10px;
 }
 .card h2 {
-  font-size: 16px;
+  font-size: 1.2rem;
   margin: 6px 0 4px;
 }
 .price {
   margin: 0 0 8px;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 1.1rem;
 }
 .btn {
   appearance: none;
   border: none;
   border-radius: 6px;
-  padding: 8px 12px;
-  font-size: 13px;
+  padding: 10px 14px;
+  font-size: 1rem;
   font-weight: 700;
   color: #fff;
   background: #111;
@@ -139,7 +138,7 @@ footer {
   padding: 14px 0;
 }
 footer small {
-  font-size: 12px;
+  font-size: 0.9rem;
 }
 
 /* ===== responsive ===== */
@@ -157,4 +156,3 @@ footer small {
     gap: 12px;
   }
 }
-
