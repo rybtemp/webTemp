@@ -67,7 +67,7 @@ header {
 /* ===== main ===== */
 main {
   flex: 1;
-  max-width: 960px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 18px 16px 40px;
 }
