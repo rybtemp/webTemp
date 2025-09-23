@@ -74,24 +74,24 @@ main {
 h1 {
   text-align: center;
   margin: 10px 0 14px;
-  font-size: 24px;
+  font-size: 28px;
 }
 
 /* ===== grid & cards ===== */
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  gap: 28px;
 }
 .card {
   background: #f4f4f4;
   border: 1px solid #e6e6e6;
   border-radius: 8px;
-  padding: 12px;
+  padding: 16px;
   text-align: center;
 }
 .image {
-  height: 120px;
+  height: 160px;
   background: #ddd;
   color: #8a8a8a;
   display: flex;
@@ -104,20 +104,20 @@ h1 {
   margin-bottom: 10px;
 }
 .card h2 {
-  font-size: 14px;
+  font-size: 16px;
   margin: 6px 0 4px;
 }
 .price {
   margin: 0 0 8px;
   font-weight: 700;
-  font-size: 12px;
+  font-size: 14px;
 }
 .btn {
   appearance: none;
   border: none;
   border-radius: 6px;
-  padding: 6px 10px;
-  font-size: 11px;
+  padding: 8px 12px;
+  font-size: 13px;
   font-weight: 700;
   color: #fff;
   background: #111;
