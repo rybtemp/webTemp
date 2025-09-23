@@ -46,7 +46,7 @@ body {
 /* Centered grid that stays within a max width */
 .product-grid {
   width: 100%; max-width: 1000px; margin: 0 auto;
-  display: grid; gap: 20px;
+  display: grid; gap: 20px; justify-content: center;
   grid-template-columns: repeat(4, 1fr);
 }
 
