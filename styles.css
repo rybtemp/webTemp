@@ -87,6 +87,7 @@ body {
   padding: 16px 0; margin-top: auto;
 }
 
+
 @media (max-width: 640px) {
   .menu { flex-wrap:wrap; gap:12px; }
   h1 { font-size:1.6rem; }
