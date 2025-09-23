@@ -1,5 +1,10 @@
-* { box-sizing: border-box; }
-html, body { height: 100%; }
+/* ===== base ===== */
+* {
+  box-sizing: border-box;
+}
+html, body {
+  height: 100%;
+}
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
@@ -10,7 +15,11 @@ body {
   min-height: 100vh;
 }
 
-header { background: #000; color: #fff; }
+/* ===== header / nav ===== */
+header {
+  background: #000;
+  color: #fff;
+}
 .nav {
   max-width: 960px;
   margin: 0 auto;
@@ -19,23 +28,59 @@ header { background: #000; color: #fff; }
   align-items: center;
   justify-content: space-between;
 }
-.brand { display: flex; align-items: center; gap: 8px; }
-.logo {
-  width: 22px; height: 22px;
-  background: #fff; color: #000;
-  display: flex; align-items: center; justify-content: center;
-  border-radius: 4px; font-weight: 700; font-size: 12px;
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
-.site-name { font-weight: 700; font-size: 14px; letter-spacing: .2px; }
-.menu { list-style: none; display: flex; gap: 16px; margin: 0; padding: 0; }
-.menu a { color: #fff; text-decoration: none; font-weight: 700; font-size: 12px; }
+.logo {
+  width: 22px;
+  height: 22px;
+  background: #fff;
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 12px;
+}
+.site-name {
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: .2px;
+}
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+}
+.menu a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 12px;
+}
 
-main { flex: 1; max-width: 960px; margin: 0 auto; padding: 18px 16px 40px; }
-h1 { text-align: center; margin: 10px 0 14px; font-size: 24px; }
+/* ===== main ===== */
+main {
+  flex: 1;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 18px 16px 40px;
+}
+h1 {
+  text-align: center;
+  margin: 10px 0 14px;
+  font-size: 24px;
+}
 
+/* ===== grid & cards ===== */
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); 
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
 }
 .card {
@@ -45,7 +90,7 @@ h1 { text-align: center; margin: 10px 0 14px; font-size: 24px; }
   padding: 12px;
   text-align: center;
 }
-.image { 
+.thumb {
   height: 120px;
   background: #ddd;
   color: #8a8a8a;
@@ -58,9 +103,15 @@ h1 { text-align: center; margin: 10px 0 14px; font-size: 24px; }
   letter-spacing: 1px;
   margin-bottom: 10px;
 }
-.card h2 { font-size: 14px; margin: 6px 0 4px; }
-.price { margin: 0 0 8px; font-weight: 700; font-size: 12px; }
-
+.card h2 {
+  font-size: 14px;
+  margin: 6px 0 4px;
+}
+.price {
+  margin: 0 0 8px;
+  font-weight: 700;
+  font-size: 12px;
+}
 .btn {
   appearance: none;
   border: none;
@@ -72,19 +123,38 @@ h1 { text-align: center; margin: 10px 0 14px; font-size: 24px; }
   background: #111;
   cursor: pointer;
 }
-.btn:hover { opacity: .92; }
+.btn:hover {
+  opacity: .92;
+}
 .btn[disabled] {
   background: #6f6f6f;
   cursor: not-allowed;
 }
 
-footer { background: #000; color: #fff; text-align: center; padding: 14px 0; }
-footer small { font-size: 12px; }
+/* ===== footer ===== */
+footer {
+  background: #000;
+  color: #fff;
+  text-align: center;
+  padding: 14px 0;
+}
+footer small {
+  font-size: 12px;
+}
 
+/* ===== responsive ===== */
 @media (max-width: 980px) {
-  .grid { grid-template-columns: repeat(2, 1fr); }
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 @media (max-width: 640px) {
-  .grid { grid-template-columns: 1fr; }
-  .menu { flex-wrap: wrap; gap: 12px; }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .menu {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
 }
+
