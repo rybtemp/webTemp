@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Shop pre-built gaming PCs with powerful parts, clean design, and reliable support.">
+  <title>Pre-Built PCs</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <nav class="nav" aria-label="Main">
+      <div class="brand">
+        <a href="index.html" class="logo">W</a>
+        <span class="site-name">WebDev PCs</span>
+      </div>
+      <ul class="menu">
+        <li><a href="index.html">Shop</a></li>
+        <li><a href="business.html">Business</a></li>
+        <li><a href="build-help.html">Build Help</a></li>
+        <li><a href="support.html">Support</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <footer>
+    <small>WebDev PCs © 2025 | </small>
+    <a href="https://instagram.com" target="_blank" rel="noopener">Our Instagram</a>
+</footer>
+
+</body>
+</html>
